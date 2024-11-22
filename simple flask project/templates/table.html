@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Entry</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            /* Gradient background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        center {
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Table Styles */
+        table {
+            width: 90%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px 20px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #ff416c;
+            /* Soft red color */
+            color: white;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Button Styles */
+        button {
+            padding: 10px 20px;
+            background-color: #ff416c;
+            /* Matching button color */
+            color: white;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #ff1e5a;
+            transform: scale(1.05);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Add New Button Styling */
+        .add-new-btn {
+            display: inline-block;
+            background-color: #f8154a;
+            margin-top: 20px;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .add-new-btn:hover {
+            background-color: #1976D2;
+            transform: scale(1.05);
+        }
+
+        /* Form Styling */
+        form {
+            display: inline;
+        }
+
+        .go-back {
+            display: inline-block;
+            position: absolute;
+            top: 150px;
+            left: 20px;
+            text-decoration: none;
+            color: #000000;
+            background-color: #a1e6fc;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .go-back:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<bod>
+    <a href="/admin" class="go-back">Go Back</a>
+    <center>
+        <h1><b>DATA BASE ENTRY</b></h1>
+    </center>
+    <center>
+        <table border="2" cellspacing="0" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Password</th>
+                    <th>Confirm Password</th>
+                    <th>Gender</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.f_name }}</td>
+                    <td>{{ i.u_name }}</td>
+                    <td>{{ i.eml }}</td>
+                    <td>{{ i.phn }}</td>
+                    <td>{{ i.psw }}</td>
+                    <td>{{ i.cpsw }}</td>
+                    <td>{{ i.gender }}</td>
+                    <td>
+                        <form action="/delete/{{ i.id }}" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <a href="/update/{{ i.id }}">
+                            <button type="button">Update</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/add" class="add-new-btn">Add New</a>
+    </center>
+    </body>
+
+</html>

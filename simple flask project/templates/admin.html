@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(0, 0, 0);
+      height: 700.5px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+
+    }
+
+    .container {
+      background-color: rgba(35, 30, 30, 0.33);
+      backdrop-filter: blur(20%);
+      border-radius: 20px;
+      height: 35em;
+      width: 30em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 4%;
+
+
+    }
+
+    .container img {
+      position: relative;
+      top: -100px;
+      height: 5rem;
+
+
+    }
+
+    .title {
+      background: linear-gradient(90deg, #00dbde, #fc00ff);
+      -webkit-background-clip: text;
+      margin-top: -90px;
+      -webkit-text-fill-color: transparent;
+      font-size: 2vw;
+    }
+
+    .user-details {
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 16%;
+    }
+
+    .input-box input {
+      display: flex;
+      margin-top: 5px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      padding: 0 35px;
+      height: 40px;
+      width: 350px;
+      background: linear-gradient(90deg, #00dbde, #fc00ff);
+    }
+
+    ::-webkit-input-placeholder {
+      color: black;
+
+    }
+
+    .button input {
+      position: relative;
+      top: 50px;
+      left: 3px;
+
+      padding: 12px 145px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #00dade3c, #fb00ff5b);
+
+    }
+
+    .button input:hover {
+      cursor: pointer;
+    }
+
+    .chk {
+      position: relative;
+      top: 20px;
+      margin-left: 5px;
+    }
+
+    .chk:hover,
+    input:hover {
+      cursor: pointer;
+    }
+
+    .pt {
+      position: relative;
+      top: 70px;
+      left: 30px;
+    }
+
+    .pt a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .pt a:hover {
+      font-style: italic;
+      text-decoration: underline;
+    }
+
+    .alert {
+      position: absolute;
+      background: black;
+      color: rgb(255, 255, 255);
+      left: 19%;
+      top: 0;
+      height: 60px;
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-weight: 900;
+    }
+
+    .go-back {
+      display: inline-block;
+      position: relative;
+      left: -45%;
+      text-decoration: none;
+      color: #000000;
+      background-color: #a1e6fc;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .go-back:hover {
+      background-color: #0056b3;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+  <a href="/" class="go-back">Go Back</a>
+  <form form action="http://127.0.0.1:5000/admin" method="post">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li class="alert">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <div class="container">
+      <!-- Title section -->
+      <div class="title">Admin</div>
+      <div class="content">
+        <!-- Registration form -->
+
+        <div class="user-details">
+
+          <!-- Input for Username -->
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required name="use">
+          </div>
+          <!-- Input for Password -->
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" required name="psw">
+          </div>
+        </div>
+     
+   
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+</body>
+
+</html>
+</body>
+
+</html>

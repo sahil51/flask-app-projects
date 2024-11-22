@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+.cont-nav .logo img{
+    
+    height: 5vw;
+    width:10vw;
+    
+}
+.static h1{
+    background: linear-gradient(90deg,#00dbde,#fc00ff);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:0px 0px 50px  #00dbde;
+}
+
+.cont-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    position:fixed;
+    
+
+}
+.cont-nav ul {
+    display: flex;
+    gap: 4vw;
+    list-style: none;
+    text-transform: capitalize;
+}
+.cont-nav ul li a{
+    
+    font-weight: 900;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.bt-n{
+    margin-right: 8vw;
+    height:50px ;
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bt-n a{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 0.1px solid white;
+    height:80%;
+    border-radius:15px;
+    width: 60%;
+    background-color: transparent;
+}
+.bt-n a i{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+
+.bt-n button{
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    height:100%;
+    border-radius:15px;
+    width: 40%;
+    background-color: #a1e6fc;
+}
+.main{
+    height: 95vh;
+    width: 100%;
+}
+.cont-main{
+    color: white;
+    display: flex;
+   
+    height: 100%;
+    align-items: center;
+}
+.cont-sub{
+    margin-left: 10vw;
+}
+
+.cont-sub h6{
+    padding: 0.5%  2%;
+    font-size: larger;
+    background-color: gray;
+    width: 325px;
+    height: 90%;
+    border-radius: 8px;
+}
+.cont-sub  i{
+  position: relative;
+  top: 2px;
+  left: 3px;
+}
+.cont-sub  h1{
+    font-size: 6vw;
+}
+.cont-sub p{
+    font-size: 1.5vw;
+}
+
+
+.cont-main button{
+    position: relative;
+    padding:1vw ;
+    top: 2vw;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius:1vw;
+    background-color: #a1e6fc;
+    font-weight: 400;
+}
+.cont-main button i{
+    margin-left: 0.3vw;
+}
+
+.bt-n2 a{
+    color: black;
+    position: absolute;
+    top: 1.2em;
+    width: 6em;
+    height: 45px;
+}
