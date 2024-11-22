@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+       
+        body {
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #db6f35;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .container p {
+            font-size: 18px;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .container p strong {
+            color: #db6f35;
+        }
+        a {
+            display: inline-block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #db6f35;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        a:hover {
+            background-color: #b75d2f;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 24px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>User Details</h1>
+
+    <div class="container">
+        <pre><p><strong>ID:</strong>                   {{ id }}</p></pre>                   
+        <pre><p><strong>Username:</strong>             {{ uname }}</p></pre>
+        <pre><p><strong>Name:</strong>                 {{ name }}</p></pre>
+        <pre><p><strong>Email:</strong>                {{ email }}</p></pre>
+        <pre><p><strong>Phone:</strong>                {{ phn }}</p></pre>
+        <pre><p><strong>Gender:</strong>               {{ gender }}</p></pre>
+        <pre><p><strong>Password:</strong>             {{ psw }}</p></pre>
+        <pre><p><strong>Confirm Password:</strong>     {{ cpsw }}</p></pre>
+  
+        <a href="/dashboard">Go back</a>
+    </div>
+
+</body>
+</html>

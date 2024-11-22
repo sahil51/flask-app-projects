@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            padding-right: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff833e;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 107%;
+            padding: 10px;
+            background-color: #ff833e;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e76a3c;
+        }
+
+        .remember-me {
+            margin: 10px 0;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .links a {
+            margin: 0 5px;
+            color: #ff833e;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .admin-link {
+            font-weight: bold;
+        }
+
+        .flashes {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px;
+        }
+
+        .flashes li {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            color: #ff5900;;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="/success" method="post">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="uname" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="psw" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+            <button type="submit">Submit</button>
+            <div class="links">
+                <a href="/varifiedd">Forgot Password?</a>
+                <a href="/admin" class="admin-link">Admin</a>
+                <a href="/registraion" class="register-link">Register</a> <!-- Registration link added -->
+            </div>
+        </form>
+    </div>
+</body>
+</html>

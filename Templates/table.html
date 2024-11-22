@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            color: black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 2px solid #ff833e;
+            padding: 12px;
+            text-align: center;
+            align-items: center;
+        }
+
+
+
+        button {
+            background-image: linear-gradient(#fca272, #ff833e);
+            border: 0;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            font-family: Montserrat, sans-serif;
+            font-size: .9em;
+            margin: 5px;
+            padding: 10px 15px;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-70 {
+            background-image: linear-gradient(#fca272, #ff833e);
+            border: 0;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            font-family: Montserrat, sans-serif;
+            font-size: .9em;
+            margin: 5px;
+            padding: 10px 15px;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+    .welcome-message {
+      font-family: Arial, sans-serif;
+      color:  #ff833e;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: capitalize;
+      text-decoration: underline;
+      font-weight: 900;
+    }
+    .flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.flashes li {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    color: #ff833e;
+    font-weight: 900;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+  
+    <br>
+    <center  class="welcome-message">Welcome admin : {{name}}</center>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>user Name</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Gender</th>
+                <th>Password</th>
+                <th>Confirm Password</th>
+                <th>Update Database</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+                {% for i in data %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.uname }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.phn }}</td>
+                    <td>{{ i.gender }}</td>
+                    <td>{{ i.psw }}</td>
+                    <td>{{ i.cpsw }}</td>
+                    <td>
+                        <form action="/view/{{ i.id }}" method="get" style="display:inline;">
+                            <button type="submit" class="button-70">View</button>
+                        </form>
+
+                        <a href="/add">
+                            <button type="submit"  class="button-70">Add new</button>
+
+                        <a href="/modify/{{ i.id }}" style="display:inline;">
+                            <button type="submit"  class="button-70">Modify</button>
+                        </a>
+                        <a href="/varifiedd">
+                            <button type="submit"  class="button-70">Change Password</button>
+                        </a>
+
+                        <form action="/delete/{{ i.id }}" method="post" style="display:inline;">
+                            <button type="submit"  class="button-70">Delete</button>
+                        </form>
+
+                        </a>
+                    </td>
+                </tr>
+            </tr>
+            
+            {% endfor %}
+            </tbody>
+            
+        </table>
+        <br>
+        <form action="/Logout">
+            <center>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+        </center>
+        <button type="submit">Log Out</button>
+    </form>
+</body>
+
+</html>
