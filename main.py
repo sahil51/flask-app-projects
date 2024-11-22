@@ -1,14 +1,3 @@
-# (
-# data base name db1 and table name tb9
-# install package in terminal pip install Flask-Mail
-# this is random email if this email note working  change it and use another app.config['MAIL_USERNAME']='sahilrajputygamer@gmail.com'
-# this password is genrated  by gmail it's not a gmail('sahilrajputygamer@gmail.com') password  its a key('ubfi gdwa cozq xquk') that use flask app  app.config['MAIL_PASSWORD']='ubfi gdwa cozq xquk'
-# )
-
-
-
-
-
 from flask import*
 from flask_mail import *
 import mysql.connector
